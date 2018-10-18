@@ -7,6 +7,6 @@
 <title>Welcome</title>
 </head>
 <body>
-Welcome ${welcomeName} and your password is ${welcomePass}
+Welcome ${bagoPangalan} and your password is ${bagoHudyat}
 </body>
 </html>

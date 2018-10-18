@@ -33,7 +33,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns = "/login.do")
 public class LoginServlet extends HttpServlet {
 	
-	private UserValidationService service = new UserValidationService();
+	private LoginValidationService service = new LoginValidationService();
 
 	/*@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -71,7 +71,7 @@ public class LoginServlet extends HttpServlet {
 		String pangalan = request.getParameter("pangalan");
 		String hudyat = request.getParameter("hudyat");
 		
-		boolean isUserValid = service.isUserValid(pangalan, hudyat);
+		boolean isUserValid = service.validateUser(pangalan, hudyat);
 		
 		if(isUserValid) {
 			request.setAttribute("welcomeName", pangalan);
