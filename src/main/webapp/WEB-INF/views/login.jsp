@@ -4,15 +4,32 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<script type="text/javascript" src="./lib/jquery-1.12.3.min.js"></script>
+<script type="text/javascript" src="./js/signup_lightbox.js"></script>
+<link rel="stylesheet" type="text/css" href="./css/style.css">
 <title>I am a JSP</title>
 </head>
 <body>
 
-<form action="/spring-mvc/login" method="post">
+<%-- <form action="/login" method="post">
 <p><font color="red">${errorMessage}</font></p>
 Name <input type="text" name="pangalan" placeholder="name"/>
 Password <input type="password" name="hudyat"/> 
-<input type="submit" value="Login"/>
+<input type="submit" value="Login"/> --%>
+
+
+  <div class="lightbox">
+    <h2>Lightbox</h2>
+    <p>
+      Paragraph here
+    </p>
+    <form action="/login" method="post">
+      <p><font color="red">${errorMessage}</font></p>
+		Name <input type="text" name="pangalan" placeholder="name"/>
+		Password <input type="password" name="hudyat"/> 
+		<input type="submit" value="Login"/>
+    </form>
+  </div>
 
 </form>
 
