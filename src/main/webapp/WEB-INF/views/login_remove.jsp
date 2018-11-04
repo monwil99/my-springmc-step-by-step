@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<script type="text/javascript" src="./lib/jquery-1.12.3.min.js"></script>
-<script type="text/javascript" src="./js/signup_lightbox.js"></script>
-<link rel="stylesheet" type="text/css" href="./css/style.css">
+<script type="text/javascript" src="/resources/lib/jquery-1.12.3.min.js"></script>
+<script type="text/javascript" src="/resources/js/signup_lightbox.js"></script>
+<link rel="stylesheet" type="text/css" href="/resources/css/style.css">
 <title>I am a JSP</title>
 </head>
 <body>

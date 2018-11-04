@@ -1,22 +1,26 @@
 package com.in28minutes.login;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.SessionAttributes;
-
-import com.in28minutes.login.LoginValidationService;
 
 @Controller
-@SessionAttributes("bagoPangalan")
-public class LoginController {
+//@SessionAttributes("bagoPangalan") - removing this inline with spring security
+//former name is LoginController
+public class WelcomeController {
 	
-	@Autowired
+	@RequestMapping(value="/", method = RequestMethod.GET)
+	public String showLoginPage(ModelMap model) {
+		model.put("name", "in28Minutes");
+		return "welcome";
+	}
+	
+	// Starting here, remove post inline with Spring security
+	
+	/*@Autowired
 	LoginValidationService service;
+	
 	
 	@RequestMapping(value="/login", method = RequestMethod.GET)
 	public String showLoginPage() {
@@ -40,13 +44,13 @@ public class LoginController {
 		return "welcome";
 
 
-	}
+	}*/
 	
-	@RequestMapping(value="/loginHelloString")
+	/*@RequestMapping(value="/loginHelloString")
 	@ResponseBody
 	public String sayHelloString() {
 		return "Hello World dummy";
-	}
+	}*/
 
 	
 	/* All requests go to the dispatcher servlet
