@@ -1,5 +1,5 @@
 $(function() {
-	$(".lightbox").delay(500).fadeIn(1000);
+	$(".lightbox").delay(2000).fadeIn(1000);
 
 
 });

@@ -3,19 +3,27 @@ package com.in28minutes.todo;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
+
+import com.in28minutes.common.ExceptionController;
 
 @Controller
 @SessionAttributes("bagoPangalan")
@@ -23,6 +31,8 @@ public class TodoController {
 	
 	@Autowired
 	TodoService service;
+	
+	private Log logger = LogFactory.getLog(TodoController.class);
 	
 	/*This will be invoke before any start of controller
 	 *Across all controllers, we have unified format of Date
@@ -46,7 +56,13 @@ public class TodoController {
 	}
 
 	private String retrieveLoggedInUserName() {
-		return "in28Minutes";
+		Object principal = SecurityContextHolder.getContext()
+				.getAuthentication().getPrincipal();
+
+		if (principal instanceof UserDetails)
+			return ((UserDetails) principal).getUsername();
+
+		return principal.toString();
 	}
 	
 	/*
@@ -56,8 +72,13 @@ public class TodoController {
 	@RequestMapping(value="/add-todo", method = RequestMethod.GET)
 	public String showTodoPage(ModelMap model) {
 		// add object for Todo initially for form-binding, as the command object is available already in jsp, same goes here
+		
+		//throw new RuntimeException("Dummy Exception!");
+		
+		
+		
+		
 		model.addAttribute("todo", new Todo(0, retrieveLoggedInUserName(), "Default Desc", new Date(), false));
-
 		return "todo";
 		
 		//model is destroyed once redirected
@@ -116,6 +137,16 @@ public class TodoController {
 		service.updateTodo(todo);
 
 		return "redirect:list-todos"; 
+	}
+	
+
+
+	/* We can create and customize an exception specific to a controller
+	 */
+	@ExceptionHandler(value = Exception.class)
+	public String handleError(HttpServletRequest req, Exception exception) {
+		logger.error("Request: " + req.getRequestURL() + " raised " + exception);
+		return "error-specific";
 	}
 	
 
