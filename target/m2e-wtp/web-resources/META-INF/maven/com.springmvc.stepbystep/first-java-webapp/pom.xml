@@ -13,23 +13,35 @@
 			<version>6.0</version>
 			<scope>provided</scope>
 		</dependency>
+<<<<<<< HEAD
 		<!-- Ensure this library is placed before spring security as you will encounter errors -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>4.2.2.RELEASE</version>
 		</dependency>
+=======
+>>>>>>> fe06ab26b9881051cb66a9ac7d0a915ac7bccfb0
 		<!-- For Spring Security -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-web</artifactId>
 			<version>4.0.1.RELEASE</version>
+<<<<<<< HEAD
 	 		</dependency>
 	     <dependency>
 	        <groupId>org.springframework.security</groupId>
 	        <artifactId>spring-security-config</artifactId>
 	        <version>4.0.1.RELEASE</version>
 	     </dependency>	
+=======
+  		</dependency>
+       <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>4.0.1.RELEASE</version>
+        </dependency>	
+>>>>>>> fe06ab26b9881051cb66a9ac7d0a915ac7bccfb0
 		<!-- Validation implementor  -->
 		<dependency>
     			<groupId>org.hibernate</groupId>
@@ -43,6 +55,14 @@
             <version>1.2</version>
         </dependency>
 		<dependency>
+<<<<<<< HEAD
+=======
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>4.2.2.RELEASE</version>
+		</dependency>
+		<dependency>
+>>>>>>> fe06ab26b9881051cb66a9ac7d0a915ac7bccfb0
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
@@ -59,12 +79,15 @@
             <artifactId>jquery</artifactId>
             <version>1.9.1</version>
         </dependency>
+<<<<<<< HEAD
         <!-- for JSon/xml formatting display for Rest controller -->
         <dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 			<version>2.5.3</version>
 		</dependency>
+=======
+>>>>>>> fe06ab26b9881051cb66a9ac7d0a915ac7bccfb0
 	</dependencies>
 
 	<build>

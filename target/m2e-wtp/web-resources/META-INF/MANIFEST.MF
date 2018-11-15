@@ -1,5 +1,10 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: wilmonM
 Build-Jdk: 1.8.0_191
+=======
+Built-By: Wilmon
+Build-Jdk: 1.8.0_171
+>>>>>>> fe06ab26b9881051cb66a9ac7d0a915ac7bccfb0
 Created-By: Maven Integration for Eclipse
 
