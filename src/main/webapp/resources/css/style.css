@@ -132,3 +132,13 @@ h2 {
   transform: scaleX(1); }
 
 /*# sourceMappingURL=style.css.map */
+.gallery img {
+  position: absolute;
+  height: 300px;
+  width: 500px;
+  left: 1000px;
+}
+
+.gallery img:nth-child(1) {
+  left: 0;
+}

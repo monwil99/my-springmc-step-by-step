@@ -35,6 +35,9 @@
 	<div>
 		<a class="btn btn-success" href="/add-todo"> Add </a>
 	</div>
+<!-- 		<div class = "gallery">
+		<img alt="" src="/resources/images/family.png">		
+	</div> -->
 </div>
 
 <%@ include file="common/footer.jspf" %>

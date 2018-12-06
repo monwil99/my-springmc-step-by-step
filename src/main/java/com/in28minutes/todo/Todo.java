@@ -18,6 +18,10 @@ public class Todo {
 		super();
 	}
 
+	/*
+	 * We can use a Builder pattern here
+	 * 
+	 */
 	public Todo(int id, String user, String desc, Date targetDate, boolean isDone) {
 		super();
 		this.id = id;

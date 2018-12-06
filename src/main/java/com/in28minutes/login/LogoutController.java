@@ -30,5 +30,7 @@ public class LogoutController {
 		
 		return "redirect:/";
 	}
+	
+	//what is again the difference of redirect with the other one?
 
 }
